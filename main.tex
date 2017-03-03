@@ -6,30 +6,45 @@
 %BoldItalicFont=fonts/arial/arialbi.ttf
 %]{fonts/arial/arial.ttf}
 
-% More heightweight font
-%\setsansfont[BoldFont={FiraSans-SemiBold.ttf}]{FiraSans-Book.ttf}
-
 \usetheme{metropolis}
 
+\usepackage[spanish,es-tabla]{babel}
 \usepackage{appendixnumberbeamer}
 
 \usepackage{booktabs}
 \usepackage[scale=2]{ccicons}
 
 \usepackage{pgfplots}
+\usepackage{pgfplotstable}
 \usepgfplotslibrary{dateplot}
 
 \usepackage{xspace}
+\usepackage{microtype}
+\frenchspacing
+
 \newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
+
+\newcommand{\tableTwoColumns}[3]{
+\pgfplotstabletypeset[
+     columns/A/.style={column name=\bfseries{#2}}
+     , 1000 sep={}
+     , columns/B/.style={column name=\bfseries{#3}}
+     , every even row/.style={
+       before row={\rowcolor[gray]{0.9}}}
+     , every head row/.style={ before row=\toprule,after       row=\midrule}
+     , every last row/.style={ after row=\bottomrule \hline}
+     , col sep=semicolon
+     , string type
+     ]{#1}
+}
 
 %TODO:revisar
 %For use with sharelatex
 \defaultfontfeatures{Mapping=tex-text}
 %\setsansfont[Path=fonts/,BoldFont={FiraSans-Regular.ttf}]{FiraSans-Light.ttf}
-
 \setsansfont[Path=fonts/,BoldFont={FiraSans-SemiBold.ttf}]{FiraSans-Book.ttf}
-
 \setmonofont[Path=fonts/]{FiraMono-Regular.ttf}
+
 \newfontfamily\ExtraLight[Path=fonts/,ItalicFont=FiraSans-ExtraLightItalic.ttf]{FiraSans-ExtraLight.ttf}
 \newfontfamily\Light[Path=fonts/,ItalicFont=FiraSans-LightItalic.ttf]{FiraSans-Light.ttf}
 \newfontfamily\Book[Path=fonts/,ItalicFont=FiraSans-Italic.ttf,BoldFont=FiraSans-Bold.ttf,BoldItalicFont=FiraSans-BoldItalic.ttf]{FiraSans-Regular.ttf}
@@ -39,7 +54,6 @@
 
 \titlegraphic{\hfill\includegraphics[height=1.1cm]{images/logos/logo-full-usach-bw.pdf}}
 
-\usepackage[spanish,es-tabla]{babel}
 
 %HIGH CONTRAST
 \definecolor{mAlert}{HTML}{AD003D}
@@ -65,6 +79,14 @@
    fg=OwlBlue
 }
 
+\setbeamercolor{progress bar}{
+   fg=OwlBlue
+}
+
+\setbeamercolor{marked text}{
+   fg=OwlBlue
+}
+
 % Lateral logo in each page
 \addtobeamertemplate{frametitle}{}{%
 \begin{tikzpicture}[remember picture,overlay]
@@ -79,6 +101,11 @@
 \usepackage{xcolor}
 \newcommand{\myrowcolour}{\rowcolor[gray]{0.9}}
 
+\usepackage{hyperref}
+\hypersetup{pdfauthor={My Name}
+          , pdftitle={My Title}
+          , pdfprintscaling=None}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % INICIO DOCUMENTO %
@@ -87,8 +114,8 @@
 %\subtitle{}
 
 \subject{Theoretical Computer Science}
-\date{Defensa de tesis de grado, 2017}
-\author{Nombre Nombre Apellido Apellido\inst{1} \\ \\ Profesor Guía: Nombre Profesor\\ Profesor Co-Guía: Nombre Profesor}
+\date{Defensa de tesis de grado, 2017.}
+\author{Nombre1 Nombre2 Apellido1 Apellido2\inst{1} \\ \\ Profesor Guía: Nombre Profesor\\ Profesor Co-Guía: Nombre Profesor}
 \institute
 {
 \inst{1}%
@@ -253,6 +280,7 @@ or show \textbf{bold} results.\end{verbatim}
     \href{http://www.texample.net/tikz/examples/rotated-polygons/}{texample.net}.}
   \end{figure}
 \end{frame}
+
 \begin{frame}{Tables}
   \begin{table}
     \caption{Largest cities in the world (source: Wikipedia)}
@@ -278,6 +306,14 @@ or show \textbf{bold} results.\end{verbatim}
       \hline
     \end{tabular}
   \end{table}
+\end{frame}
+
+\begin{frame}{Table readed from a file}
+   \begin{table}
+     \caption{Largest cities in the world (source: Wikipedia)}
+     \centering
+     \tableTwoColumns{data/data-table-example.csv}{City}{Population}
+    \end{table} 
 \end{frame}
 
 \begin{frame}{Blocks}
@@ -326,33 +362,47 @@ or show \textbf{bold} results.\end{verbatim}
 \begin{frame}{Line plots}
   \begin{figure}
     \begin{tikzpicture}
-      \begin{axis}[
-        mlineplot,
-        width=0.9\textwidth,
-        height=6cm,
-      ]
+      \begin{axis}[mlineplot
+                  , width=0.9\textwidth
+                  , height=6cm
+                  , xlabel={Foo}
+                  , ylabel={Bar}
+                  , legend style = {
+                    legend pos = outer north east}
+                  ]
 
-        \addplot {sin(deg(x))};
+        \addplot{sin(deg(x))};
         \addplot+[samples=100] {sin(deg(2*x))};
+        \addplot{sin(sin(x))};
+        
+        \legend{lorem, ipsum, otro}
 
       \end{axis}
     \end{tikzpicture}
   \end{figure}
 \end{frame}
+
 \begin{frame}{Bar charts}
   \begin{figure}
     \begin{tikzpicture}
-      \begin{axis}[
-        mbarplot,
-        xlabel={Foo},
-        ylabel={Bar},
-        width=0.9\textwidth,
-        height=6cm,
-      ]
+      \begin{axis}[mbarplot, 
+                  , xlabel={Foo}
+                  , ylabel={Bar}
+                  , width=0.9\textwidth
+                  , height=6cm
+                  , legend style = {
+                    legend pos = outer north east}
+                  , axis on top
+                  , ymajorgrids=true
+                  , grid style=white
+                  , major tick length=0pt
+                  , ymin=0
+                  , xtick=data                  
+                  ]
 
-      \addplot plot coordinates {(1, 20) (2, 25) (3, 22.4) (4, 12.4)};
-      \addplot plot coordinates {(1, 18) (2, 24) (3, 23.5) (4, 13.2)};
-      \addplot plot coordinates {(1, 10) (2, 19) (3, 25) (4, 15.2)};
+      \addplot+[draw opacity=0] plot coordinates {(1, 20) (2, 25) (3, 22.4) (4, 12.4)};
+      \addplot+[draw opacity=0] plot coordinates {(1, 18) (2, 24) (3, 23.5) (4, 13.2)};
+      \addplot+[draw opacity=0] plot coordinates {(1, 10) (2, 19) (3, 25) (4, 15.2)};
 
       \legend{lorem, ipsum, dolor}
 
@@ -360,6 +410,8 @@ or show \textbf{bold} results.\end{verbatim}
     \end{tikzpicture}
   \end{figure}
 \end{frame}
+
+
 \begin{frame}{Quotes}
   \begin{quote}
     Veni, Vidi, Vici
