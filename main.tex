@@ -1,0 +1,450 @@
+\documentclass[10pt]{beamer}
+% If you want to use arial font
+%\setsansfont[
+%BoldFont=fonts/arial/arialbd.ttf,
+%ItalicFont=fonts/arial/ariali.ttf,
+%BoldItalicFont=fonts/arial/arialbi.ttf
+%]{fonts/arial/arial.ttf}
+
+% More heightweight font
+%\setsansfont[BoldFont={FiraSans-SemiBold.ttf}]{FiraSans-Book.ttf}
+
+\usetheme{metropolis}
+
+\usepackage{appendixnumberbeamer}
+
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+
+\usepackage{pgfplots}
+\usepgfplotslibrary{dateplot}
+
+\usepackage{xspace}
+\newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
+
+%TODO:revisar
+%For use with sharelatex
+\defaultfontfeatures{Mapping=tex-text}
+%\setsansfont[Path=fonts/,BoldFont={FiraSans-Regular.ttf}]{FiraSans-Light.ttf}
+
+\setsansfont[Path=fonts/,BoldFont={FiraSans-SemiBold.ttf}]{FiraSans-Book.ttf}
+
+\setmonofont[Path=fonts/]{FiraMono-Regular.ttf}
+\newfontfamily\ExtraLight[Path=fonts/,ItalicFont=FiraSans-ExtraLightItalic.ttf]{FiraSans-ExtraLight.ttf}
+\newfontfamily\Light[Path=fonts/,ItalicFont=FiraSans-LightItalic.ttf]{FiraSans-Light.ttf}
+\newfontfamily\Book[Path=fonts/,ItalicFont=FiraSans-Italic.ttf,BoldFont=FiraSans-Bold.ttf,BoldItalicFont=FiraSans-BoldItalic.ttf]{FiraSans-Regular.ttf}
+\newfontfamily\Medium[Path=fonts/,ItalicFont=FiraSans-MediumItalic.ttf]{FiraSans-Medium.ttf}
+
+\AtBeginEnvironment{tabular}{\setsansfont[Path=fonts/,BoldFont={FiraSans-Regular.ttf}, Numbers={Monospaced}]{FiraSans-Light.ttf}}
+
+\titlegraphic{\hfill\includegraphics[height=1.1cm]{images/logos/logo-full-usach-bw.pdf}}
+
+\usepackage[spanish,es-tabla]{babel}
+
+%HIGH CONTRAST
+\definecolor{mAlert}{HTML}{AD003D}
+\definecolor{mExample}{HTML}{005580}
+
+%Owl colors
+\RequirePackage{xcolor}
+\definecolor{OwlRed}{RGB}{255,92,168}
+\definecolor{OwlGreen}{RGB}{90,168,0}
+\definecolor{OwlBlue}{RGB}{0,152,233}
+\definecolor{OwlYellow}{RGB}{242,147,24}
+
+\setbeamercolor{normal text}{%
+  fg=black,
+% bg=white
+}
+\setbeamercolor{alerted text}{%
+  fg=mAlert,
+%   fg=OwlRed,
+}
+\setbeamercolor{example text}{%
+%  fg=mExample,
+   fg=OwlBlue
+}
+
+% Lateral logo in each page
+\addtobeamertemplate{frametitle}{}{%
+\begin{tikzpicture}[remember picture,overlay]
+\node[anchor=north east,yshift=2pt] at (current page.north east) {\includegraphics[height=0.85cm]{images/logos/logo-onlyescudo-usach-white.pdf}};
+\end{tikzpicture}}
+
+% Definition of commands for fancy tables
+%Fancy tables
+\usepackage{array,booktabs}
+\newcolumntype{L}{@{}>{\kern\tabcolsep}l<{\kern\tabcolsep}}
+\usepackage{colortbl}
+\usepackage{xcolor}
+\newcommand{\myrowcolour}{\rowcolor[gray]{0.9}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% INICIO DOCUMENTO %
+
+\title{Título del tema}
+%\subtitle{}
+
+\subject{Theoretical Computer Science}
+\date{Defensa de tesis de grado, 2017}
+\author{Nombre Nombre Apellido Apellido\inst{1} \\ \\ Profesor Guía: Nombre Profesor\\ Profesor Co-Guía: Nombre Profesor}
+\institute
+{
+\inst{1}%
+Departamento de Ingeniería Informática\\
+Universidad de Santiago de Chile
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}{Contenidos}
+  \setbeamertemplate{section in toc}[sections numbered]
+  \tableofcontents[hideallsubsections]
+\end{frame}
+
+
+\section{Introducción}
+
+\begin{frame}[fragile]{Esto es un título}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tortor diam, volutpat eget semper vitae, elementum et nunc. Aliquam erat volutpat. Aenean et aliquet nisl. Ut non vehicula lorem. Fusce eu elit eleifend, porttitor risus eget, pulvinar odio. Quisque non arcu ac arcu mollis elementum sed at velit. Suspendisse porttitor erat non metus scelerisque, eget commodo nunc cursus. Sed nec orci non nisi viverra tincidunt sit amet eu nisi.
+
+Note, that you have to have Mozilla's \emph{Fira Sans} font and XeTeX
+installed to enjoy this wonderful typography.
+\end{frame}
+
+\begin{frame}[fragile]{Objetivos}
+      \metroset{block=fill}
+      \begin{block}{Objetivo general}
+      Diseñar y evaluar un Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tortor diam, volutpat eget semper vitae, elementum et nunc. Aliquam erat volutpat. Aenean et aliquet nisl.
+      \end{block}
+      \begin{enumerate}
+        \item \textbf{Esto esta en negrita} Objetivo especifico 1.
+        \item Objetivo específico 2.
+        \item Objetivo específico 3.
+        \item Objetivo específico 4.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile]{Metodología}
+      \metroset{block=fill}
+      \begin{exampleblock}{Hipótesis}
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tortor diam, volutpat eget semper vitae, elementum et nunc. Aliquam erat volutpat. Aenean et aliquet nisl. Ut non vehicula lorem. Fusce eu elit eleifend, porttitor risus eget, pulvinar odio.
+      \end{exampleblock}
+
+\end{frame}
+
+\begin{frame}[fragile]{Alcances y limitaciones}
+      \begin{alertblock}{Alcances}
+        \begin{enumerate}
+          \item Alcance 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tortor diam, volutpat eget semper vitae, elementum et nunc. Aliquam erat volutpat. Aenean et aliquet nisl. Ut non vehicula lorem.
+          \item Alcance 2: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tortor diam, volutpat eget semper vitae, elementum et nunc. Aliquam erat volutpat. Aenean et aliquet nisl. Ut non vehicula lorem.
+          \item Alcance 3: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tortor diam, volutpat eget semper vitae, elementum et nunc. Aliquam erat volutpat. Aenean et aliquet nisl. Ut non vehicula lorem.
+        \end{enumerate}
+      \end{alertblock}
+\end{frame}
+
+\section{Título sección 2}
+
+\begin{frame}{Título de la sección 2}
+	4 different titleformats:
+	\begin{itemize}
+		\item Regular
+		\item \textsc{Smallcaps}
+		\item \textsc{allsmallcaps}
+		\item ALLCAPS
+	\end{itemize}
+	They can either be set at once for every title type or individually.
+\end{frame}
+
+\begin{frame}{Small caps}
+	This frame uses the \texttt{smallcaps} titleformat.
+
+	\begin{alertblock}{Potential Problems}
+	Esto es un bloque del tipo alertblock sin relleno.
+	\end{alertblock}
+\end{frame}
+
+
+\section{Ejemplos}
+
+\begin{frame}[fragile]{Typography}
+      \begin{verbatim}The theme provides sensible defaults to
+\emph{emphasize} text, \alert{accent} parts
+or show \textbf{bold} results.\end{verbatim}
+
+  \begin{center}becomes\end{center}
+
+  The theme provides sensible defaults to \emph{emphasize} text,
+  \alert{accent} parts or show \textbf{bold} results.
+\end{frame}
+
+\begin{frame}{Font feature test}
+  \begin{itemize}
+    \item Regular
+    \item \textit{Italic}
+    \item \textsc{SmallCaps}
+    \item \textbf{Bold}
+    \item \textbf{\textit{Bold Italic}}
+    \item \textbf{\textsc{Bold SmallCaps}}
+    \item \texttt{Monospace}
+    \item \texttt{\textit{Monospace Italic}}
+    \item \texttt{\textbf{Monospace Bold}}
+    \item \texttt{\textbf{\textit{Monospace Bold Italic}}}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Lists}
+  \begin{columns}[T,onlytextwidth]
+    \column{0.33\textwidth}
+      Items
+      \begin{itemize}
+        \item Milk \item Eggs \item Potatos
+      \end{itemize}
+
+    \column{0.33\textwidth}
+      Enumerations
+      \begin{enumerate}
+        \item First, \item Second and \item Last.
+      \end{enumerate}
+
+    \column{0.33\textwidth}
+      Descriptions
+      \begin{description}
+        \item[PowerPoint] Meeh. \item[Beamer] Yeeeha.
+      \end{description}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Animation}
+  \begin{itemize}[<+- | alert@+>]
+    \item \alert<4>{This is\only<4>{ really} important}
+    \item Now this
+    \item And now this
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Figures}
+  \begin{figure}
+    \newcounter{density}
+    \setcounter{density}{20}
+    \begin{tikzpicture}
+      \def\couleur{alerted text.fg}
+      \path[coordinate] (0,0)  coordinate(A)
+                  ++( 90:5cm) coordinate(B)
+                  ++(0:5cm) coordinate(C)
+                  ++(-90:5cm) coordinate(D);
+      \draw[fill=\couleur!\thedensity] (A) -- (B) -- (C) --(D) -- cycle;
+      \foreach \x in {1,...,40}{%
+          \pgfmathsetcounter{density}{\thedensity+20}
+          \setcounter{density}{\thedensity}
+          \path[coordinate] coordinate(X) at (A){};
+          \path[coordinate] (A) -- (B) coordinate[pos=.10](A)
+                              -- (C) coordinate[pos=.10](B)
+                              -- (D) coordinate[pos=.10](C)
+                              -- (X) coordinate[pos=.10](D);
+          \draw[fill=\couleur!\thedensity] (A)--(B)--(C)-- (D) -- cycle;
+      }
+    \end{tikzpicture}
+    \caption{Rotated square from
+    \href{http://www.texample.net/tikz/examples/rotated-polygons/}{texample.net}.}
+  \end{figure}
+\end{frame}
+\begin{frame}{Tables}
+  \begin{table}
+    \caption{Largest cities in the world (source: Wikipedia)}
+    \begin{tabular}{@{}lr @{} >{\kern\tabcolsep}l @{}}  
+    %\begin{tabular}{lr}
+      \toprule
+      \centering
+      
+      \bfseries{City} & \bfseries{Population}\\
+      %\midrule
+      
+      %\midrule
+      \cmidrule[0.4pt](r){1-1}
+      \cmidrule[0.4pt](l){2-2}
+      
+      Mexico City & \alert{20,116,842}\\
+      \myrowcolour
+      Shanghai & 19,210,000\\
+      Peking & 15,796,450\\
+      \myrowcolour      
+      Istanbul & 14,160,467\\
+      \bottomrule
+      \hline
+    \end{tabular}
+  \end{table}
+\end{frame}
+
+\begin{frame}{Blocks}
+  Three different block environments are pre-defined and may be styled with an
+  optional background color.
+
+  \begin{columns}[T,onlytextwidth]
+    \column{0.5\textwidth}
+      \begin{block}{Default}
+        Block content.
+      \end{block}
+
+      \begin{alertblock}{Alert}
+        Block content.
+      \end{alertblock}
+
+      \begin{exampleblock}{Example}
+        Block content.
+      \end{exampleblock}
+
+    \column{0.5\textwidth}
+
+      \metroset{block=fill}
+
+      \begin{block}{Default}
+        Block content.
+      \end{block}
+
+      \begin{alertblock}{Alert}
+        Block content.
+      \end{alertblock}
+
+      \begin{exampleblock}{Example}
+        Block content.
+      \end{exampleblock}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Math}
+  \begin{equation*}
+    e = \lim_{n\to \infty} \left(1 + \frac{1}{n}\right)^n
+  \end{equation*}
+\end{frame}
+
+\begin{frame}{Line plots}
+  \begin{figure}
+    \begin{tikzpicture}
+      \begin{axis}[
+        mlineplot,
+        width=0.9\textwidth,
+        height=6cm,
+      ]
+
+        \addplot {sin(deg(x))};
+        \addplot+[samples=100] {sin(deg(2*x))};
+
+      \end{axis}
+    \end{tikzpicture}
+  \end{figure}
+\end{frame}
+\begin{frame}{Bar charts}
+  \begin{figure}
+    \begin{tikzpicture}
+      \begin{axis}[
+        mbarplot,
+        xlabel={Foo},
+        ylabel={Bar},
+        width=0.9\textwidth,
+        height=6cm,
+      ]
+
+      \addplot plot coordinates {(1, 20) (2, 25) (3, 22.4) (4, 12.4)};
+      \addplot plot coordinates {(1, 18) (2, 24) (3, 23.5) (4, 13.2)};
+      \addplot plot coordinates {(1, 10) (2, 19) (3, 25) (4, 15.2)};
+
+      \legend{lorem, ipsum, dolor}
+
+      \end{axis}
+    \end{tikzpicture}
+  \end{figure}
+\end{frame}
+\begin{frame}{Quotes}
+  \begin{quote}
+    Veni, Vidi, Vici
+  \end{quote}
+\end{frame}
+
+{%
+\setbeamertemplate{frame footer}{My custom footer}
+\begin{frame}[fragile]{Frame footer}
+    This Theme defines a custom beamer template to add a text to the footer. It can be set via
+    \begin{verbatim}\setbeamertemplate{frame footer}{My custom footer}\end{verbatim}
+\end{frame}
+}
+
+\begin{frame}{References}
+  Some references to showcase [allowframebreaks] \cite{knuth92,ConcreteMath,Simpson,Er01,greenwade93}
+\end{frame}
+
+\section{Conclusión}
+
+\begin{frame}{Conclusión - Objetivos}
+    \metroset{block=fill}
+    \begin{exampleblock}{Objetivo especifico 1}
+        Texto.
+    \end{exampleblock}
+    \begin{itemize}
+        \item Conclusión 1.
+        \item Conclusión 2.
+        \item Conclusión 3.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Conclusión - Objetivos}
+    \metroset{block=fill}
+    \begin{exampleblock}{Objetivo especifico 2}
+        Texto.
+    \end{exampleblock}
+    \begin{itemize}
+        \item Conclusión 1.
+        \item Conclusión 2.
+        \item Conclusión 3.
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Conclusión - Objetivos}
+    \metroset{block=fill}
+    \begin{block}{Objetivo general}
+     Texto.
+    \end{block}
+    \begin{block}{Hipótesis}
+    Texto.
+    \end{block}
+\end{frame}
+
+\begin{frame}[standout]
+  ¿Preguntas? \\
+  \includegraphics[height=1.5cm]{images/logos/logo-onlyescudo-usach-white.pdf}
+\end{frame}
+
+\appendix
+
+\begin{frame}[fragile]{Apéndice}
+  Sometimes, it is useful to add slides at the end of your presentation to
+  refer to during audience questions.
+
+  The best way to do this is to include the \verb|appendixnumberbeamer|
+  package in your preamble and call \verb|\appendix| before your backup slides.
+
+  This theme will automatically turn off slide numbering and progress bars for slides in the appendix.
+\end{frame}
+
+\begin{frame}[fragile]{Otro apéndice}
+  Sometimes, it is useful to add slides at the end of your presentation to
+  refer to during audience questions.
+
+  The best way to do this is to include the \verb|appendixnumberbeamer|
+  package in your preamble and call \verb|\appendix| before your backup slides.
+
+  This theme will automatically turn off slide numbering and progress bars for slides in the appendix.
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Referencias Bibliográficas}
+  \bibliography{bibliography}
+  \bibliographystyle{abbrv}
+\end{frame}
+
+\end{document}
