@@ -1,14 +1,23 @@
 # LaTeX Beamer Slides Theme for the [University of Santiago](http://www.usach.cl/) (USACH)
-LaTeX beamer template for presentations of the University of Santiago.
+A LaTeX beamer template for presentations of the University of Santiago.
+<p align="center">
+<b><a href="#overview">Overview</a></b>
+|
+<b><a href="#usage">Usage</a></b>
+|
+<b><a href="#features">Features</a></b>
+|
+<b><a href="#license">License</a></b>
+</p>
 
-
+## Overview
 Not convinced? Have a look at the [demo slides][].
 
 ![Sample](https://github.com/gmartinezramirez/Beamer-Template-USACH/blob/master/beamer-usach-theme-collage.png)
 
+ShareLatex Link: https://es.sharelatex.com/project/58b8693df4fb0156658cb512
 
 ## Usage
-
 The following code shows a minimal example of a Beamer presentation using
 Metropolis.
 
@@ -28,6 +37,8 @@ Metropolis.
 \end{document}
 ```
 Detailed information on using Metropolis can be found in the [manual][].
+
+## Features
 
 ## License
 
