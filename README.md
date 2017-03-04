@@ -12,10 +12,11 @@ A LaTeX beamer template for presentations of the University of Santiago.
 
 ## Overview
 Not convinced? Have a look at the [demo slides][].
+[ShareLatex Project][]
 
 ![Sample](https://github.com/gmartinezramirez/Beamer-Template-USACH/blob/master/beamer-usach-theme-collage.png)
 
-ShareLatex Link: https://es.sharelatex.com/project/58b8693df4fb0156658cb512
+
 
 ## Usage
 The following code shows a minimal example of a Beamer presentation using
@@ -52,3 +53,4 @@ does not affect the presentation that you create with the theme.
 [demo slides]: http://mirrors.ctan.org/macros/latex/contrib/beamer-contrib/themes/metropolis/demo/demo.pdf
 [manual]: http://mirrors.ctan.org/macros/latex/contrib/beamer-contrib/themes/metropolis/doc/metropolistheme.pdf
 [CTAN]: http://ctan.org/pkg/beamertheme-metropolis
+[ShareLaTeX Project]: https://es.sharelatex.com/project/58b8693df4fb0156658cb512
