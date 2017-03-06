@@ -1,0 +1,7 @@
+### TODO
+
+- [ ] Test with Pandoc and Markdown.
+- [ ] Generate and test a example file (.md) for Pandoc.
+- [ ] Create macros for generate plots from a text,csv file.
+- [ ] Create macros for tables of n columns readed from a file.
+- [ ] Cleaning code separating macros and packages used in differents files.
