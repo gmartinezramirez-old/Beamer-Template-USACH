@@ -53,7 +53,7 @@ copyright notice header and license it under the same CC-BY-SA license. This
 does not affect the presentation that you create with the theme.
 
 
-[demo slides]: http://mirrors.ctan.org/macros/latex/contrib/beamer-contrib/themes/metropolis/demo/demo.pdf
+[demo slides]: https://github.com/gmartinezramirez/Beamer-Template-USACH/blob/master/example.pdf
 [manual]: http://mirrors.ctan.org/macros/latex/contrib/beamer-contrib/themes/metropolis/doc/metropolistheme.pdf
 [CTAN]: http://ctan.org/pkg/beamertheme-metropolis
 [ShareLaTeX Project]: https://es.sharelatex.com/project/58b8693df4fb0156658cb512
