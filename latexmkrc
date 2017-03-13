@@ -1,0 +1,2 @@
+$latex = 'xelatex';
+$pdflatex = 'xelatex';
